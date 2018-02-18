@@ -1,6 +1,6 @@
 ---
-title: Principios de Estadística Aplicada con R
-subtitle: Introducción a R
+title: Principios de Estad?stica Aplicada con R
+subtitle: Introducci?n a R
 Project: 
 author:
 - name: Gabriel Carrasco Escobar
@@ -17,12 +17,12 @@ output:
 ---
 
 <p style="text-align: center;"> 
-Rutinas y comandos complementarios del curso *Principios de Estadística Aplicada con R (PEAR)*
+Rutinas y comandos complementarios del curso *Principios de Estad?stica Aplicada con R (PEAR)*
 
-*Cualquier problema con este código, porfavor contactar a gabriel.carrasco@upch.pe*
+*Cualquier problema con este c?digo, porfavor contactar a gabriel.carrasco@upch.pe*
 </p>
 
-Los paquetes a ser utilizados en esta sección son:
+Los paquetes a ser utilizados en esta secci?n son:
 
 ```{r message = FALSE, warning = FALSE}
 library(devtools)
@@ -38,11 +38,11 @@ csv <- "Databases/femaleMiceWeights.csv"
 dat <- read.csv(file.path(wd, csv))
 ```
 
-## Introducción a R
+## Introducci?n a R
 
-La consola de RStudio es el área de trabajo en donde se ejecutan operaciones, funciones y códigos con R, desarrollado por R Development Core Team (2008).
+La consola de RStudio es el ?rea de trabajo en donde se ejecutan operaciones, funciones y c?digos con R, desarrollado por R Development Core Team (2008).
 
-Por ejemplo, podemos utilizarlo para llevar a cabo [operaciones aritméticas](#table_arith) como:
+Por ejemplo, podemos utilizarlo para llevar a cabo [operaciones aritm?ticas](#table_arith) como:
 
 ```{r}
 10*10
@@ -62,9 +62,9 @@ c("Juan","Carlos","Gabriel")
 
 ### Objetos
 
-Un objeto es una estructura que almacena las características y datos que se le asigne. Es asi que se dice que R es un lenguaje de programación orientado a objetos. 
+Un objeto es una estructura que almacena las caracter?sticas y datos que se le asigne. Es asi que se dice que R es un lenguaje de programaci?n orientado a objetos. 
 
-A continuación, generamos un vector con números enteros del 1 al 10
+A continuaci?n, generamos un vector con n?meros enteros del 1 al 10
 
 ```{r}
 1:10
@@ -76,25 +76,25 @@ Ahora, asignamos este vector a un objeto al cual llamaremos `x`
 x<-1:10
 x
 ```
-Así, el objeto `x` almacenará este vector
+As?, el objeto `x` almacenar? este vector
 
 ### Funciones
-Las funciones son operaciones o procedimientos desarrollados por la comunidad de R. Por ejemplo, la función `rnorm` nos permite generar una muestra de números racionales aleatorios con distribución normal. 
+Las funciones son operaciones o procedimientos desarrollados por la comunidad de R. Por ejemplo, la funci?n `rnorm` nos permite generar una muestra de n?meros racionales aleatorios con distribuci?n normal. 
 
-Utilizando esta función, asignaremos 10 números generados aleatoriamente al objeto `y`
+Utilizando esta funci?n, asignaremos 10 n?meros generados aleatoriamente al objeto `y`
 
 ```{r}
 y=rnorm(10)
 y
 ```
 
-Ahora, utilizando ambos objetos antes creados (`x` e `y`), utilizamos la función `plot` para graficar los datos.
+Ahora, utilizando ambos objetos antes creados (`x` e `y`), utilizamos la funci?n `plot` para graficar los datos.
 
 ```{r}
 plot(x,y)
 ```
 
-Añadiendo `col = "color"` podemos modificar el color del gráfico, especificando el color dentro del doble corchete. En el ejemplo a continuación, colocamos el color `blueviolet`
+A?adiendo `col = "color"` podemos modificar el color del gr?fico, especificando el color dentro del doble corchete. En el ejemplo a continuaci?n, colocamos el color `blueviolet`
 
 *[Lista de colores disponibles en R](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)* por @tzheng_color
 
@@ -116,13 +116,13 @@ require(kableExtra)
 
 ### Datasets <a id="femalemice"></a> 
 
-R puede utilizar bases de datos externas (Excel, Stata, SPSS, etc.) Para importar esta información a la consola, primero debemos establecer nuestro directorio de trabajo. Aqui almacenaremos nuestras bases de datos, scripts y archivos a ser utilizados.
+R puede utilizar bases de datos externas (Excel, Stata, SPSS, etc.) Para importar esta informaci?n a la consola, primero debemos establecer nuestro directorio de trabajo. Aqui almacenaremos nuestras bases de datos, scripts y archivos a ser utilizados.
 
 ```{r eval = FALSE}
 setwd("C:/Usuario/Estudiante/Escritorio/Estadistica")
 ```
 
-A continuación, cargaremos la base de datos `femaleMiceWeights.csv` de Love (2015) y lo almacenaremos dentro del objeto `dat`. Para lograrlo, se puede importar de tres formas distintas: 
+A continuaci?n, cargaremos la base de datos `femaleMiceWeights.csv` de Love (2015) y lo almacenaremos dentro del objeto `dat`. Para lograrlo, se puede importar de tres formas distintas: 
 
 1.- En la barra superior, entrando a File > Import Dataset y seleccionando el tipo de archivo a instalar
 ```{r echo = FALSE, out.width = "50%"}
@@ -141,7 +141,7 @@ dat <- read.csv(file.choose())
 ```
 
 ### Download
-Esta base de datos (`femaleMiceWeights.csv`) es de acceso libre y puede ser descargada directamente desde su repositorio con la función `download`.
+Esta base de datos (`femaleMiceWeights.csv`) es de acceso libre y puede ser descargada directamente desde su repositorio con la funci?n `download`.
 El archivo se descargara en el directorio de trabajo
 
 ```{r}
@@ -150,16 +150,16 @@ filename <- "femaleMiceWeights2.csv"
 download(url, destfile=filename)
 ```
 
-Para conocer el directorio de trabajo actual (en donde la función `download` a realizado la descarga) se puede utilizar la función `getwd()`
+Para conocer el directorio de trabajo actual (en donde la funci?n `download` a realizado la descarga) se puede utilizar la funci?n `getwd()`
 
-### Visualización de una base
+### Visualizaci?n de una base
 
-Para visualizar parte de la tabla importada en R, utilizamos la función `head`
+Para visualizar parte de la tabla importada en R, utilizamos la funci?n `head`
 ```{r}
 head(dat)
 ```
 
-Para visualizar todos los datos de la tabla importada en R, utilizamos la función `view`
+Para visualizar todos los datos de la tabla importada en R, utilizamos la funci?n `view`
 ```{r, eval = FALSE}
 View(dat)
 ```
@@ -171,10 +171,10 @@ kable(dat, "html") %>%
 
 ## Tipo de datos en R
 
-Existen cuatro tipos de objetos básicos en R
+Existen cuatro tipos de objetos b?sicos en R
 
 ### Vector
-Serie de elementos del mismo tipo (dimensión 1)
+Serie de elementos del mismo tipo (dimensi?n 1)
 
 ```{r}
 vector <- seq(1, 100, by =3)
@@ -182,7 +182,7 @@ vector
 ```
 
 ### Lista
-Contiene una selección de objetos heterogéneos
+Contiene una selecci?n de objetos heterog?neos
 
 ```{r}
 lista <- list(name="Mike", gender="M", company ="ProgramCreek")
@@ -190,7 +190,7 @@ lista
 ```
 
 ### Matriz
-Extensión de vectores de 2 dimensiones
+Extensi?n de vectores de 2 dimensiones
 
 ```{r}
 mat <- rbind(c(1,2,3),c(4,5,6))
@@ -198,16 +198,16 @@ mat
 ```
 
 ### Data Frame
-Una matriz con nombres de columnas (variables) y que puede incluir variables no numéricas
+Una matriz con nombres de columnas (variables) y que puede incluir variables no num?ricas
 
 ```{r}
 df <- data.frame(a=c(1,2,3,4,5), b=c(1,2,3,4,5))
 df
 ```
 
-### Identificación de objetos 
+### Identificaci?n de objetos 
 
-La función `class` nos permite identificar el tipo de dato de un objeto. En este caso, `dat` es un data.frame
+La funci?n `class` nos permite identificar el tipo de dato de un objeto. En este caso, `dat` es un data.frame
 ```{r}
 class(dat)
 ```
